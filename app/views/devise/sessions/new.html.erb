@@ -16,20 +16,20 @@
   </div>
   <p class="seperate-line">OR</p>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form__field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class:"form__input" %>
-  </div>
-  <div class="form__field">
-    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" ,class:"form__input" %>
-  </div>
-  <div class="form__field u-margin-bottom-small">
-    <%= link_to "Forgot your password?", new_password_path(resource_name), class: "form__link"%>
-    <% if devise_mapping.rememberable? -%>
-      <div class="remember-me">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
-      </div>
-  </div>
+    <div class="form__field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class:"form__input" %>
+    </div>
+    <div class="form__field">
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" ,class:"form__input" %>
+    </div>
+    <div class="form__field u-margin-bottom-small">
+      <%= link_to "Forgot your password?", new_password_path(resource_name), class: "form__link"%>
+      <% if devise_mapping.rememberable? -%>
+        <div class="remember-me">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+    </div>
   <% end -%>
   <%= f.submit "Log In" , class: "login-btn u-margin-bottom-smaller"%>
   <% end %>
