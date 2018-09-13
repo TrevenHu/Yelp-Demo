@@ -1,3 +1,26 @@
+
+<header class="header">
+  <div class="navbar">
+    <ul class="navbar__nav">
+      <li class="navbar__nav-item navbar__left-side">
+        <a class="navbar__nav-link" href="/pages/about">About</a>
+        <a class="navbar__nav-link" href="/pages/contact">Contact</a>
+      </li>
+      <li class="navbar__nav-item navbar__right-side">
+        <a class="navbar__nav-link" href="#">Log In</a>
+        <button class="navbar__nav-btn">Sign Up</button>
+      </li>
+    </ul>
+  </div>
+  <div class="header__logo-box">
+    <%=image_tag("logo.png", size: "160x80")%>
+  </div>
+  <form class="search">
+    <input class="search__input" type="search" placeholder="Search" aria-label="Search">
+    <button class="search__btn" type="submit">Search</button>
+  </form>
+</header>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Restaurants</h1>
@@ -31,3 +54,4 @@
 <br>
 
 <%= link_to 'New Restaurant', new_restaurant_path, class: "btn btn-link" %>
+<%=image_tag("footer.png", size: "960x140")%>
