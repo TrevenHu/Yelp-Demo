@@ -1,24 +1,4 @@
-/*Universal selector will seelct each and every element on the page and then apply these declarations here to it*/
-
-*,
-*::after,
-*::before {
-    /* margin: are used to create space around elements, outside of any defined borders.*/
-    margin: 0;
-    /* padding: are used to generate space around an element's content, inside of any defined borders.*/
-    padding: 0;
-    box-sizing: inherit;
-}
-
-body {
-    /* box-sizing: border-box: change the box model so that the borders and the paddings are no longer added to the total width or the total height that we specify for a box*/
-    box-sizing: border-box;
-}
-
-html {
-    // this define what 1rem is
-    font-size: 100%;
-}
+@import "variables";
 
 .header {
     /*    Relative to 95% of the height of the viewport**/
@@ -39,15 +19,6 @@ html {
         display: block;
     }
 
-    &__text-box {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        /*translate: shift 50% of width to the left ,shift 50% of the height to the top*/
-        transform: translate(-50%, -50%);
-        text-align: center;
-    }
-
 }
 
 .navbar {
@@ -55,7 +26,7 @@ html {
     margin: 0 auto;
     width: 75vw;
     font-weight: 700;
-    color: #fff;
+    color: $color-white;
 
     &__nav-item{
         display: inline-block;
@@ -68,7 +39,7 @@ html {
         padding: 0 1.5rem;
         &:hover{
             text-decoration: none;
-            color: #fff;
+            color: $color-white;
 
             &::after {
               content:""; 
@@ -77,28 +48,28 @@ html {
               padding-top: .1rem;
               left: 10%;
               position: absolute;
-              border-bottom: 2px solid #fff; 
+              border-bottom: 2px solid $color-white; 
             }
         }
     }
 
     &__nav-btn{
         padding: 0 1.5rem;
-        color: #fff;
+        color: $color-white;
         background: transparent;
         padding: .3rem 1.2rem;
-        border: 2px solid #fff;
+        border: 2px solid $color-white;
         border-radius: 5px;
         font-weight: inherit;
 
         &:hover{
-            background: #fff;
+            background: $color-white;
             color: #666;
             text-decoration: none;
         }
 
         &:active{
-            background: #fff;
+            background: $color-white;
             color: #999;
         }
 
@@ -140,11 +111,11 @@ html {
     &__btn{
         display: inline-block;
         border-radius: 0 4px 4px 0;
-        background: #d32323;
+        background: $color-red-medium;
         border: none;
         padding: .7rem 1.5rem;
         width: 15%;
-        color: #fff;
+        color: $color-white;
         font-weight: 700;
 
         &:focus,
@@ -152,11 +123,11 @@ html {
         &:visited{
             outline: none;
             border: none;
-            background: #be2020;
+            background: $color-red-btn-hover;
         }
 
         &:active{
-            background: #a91c1c;
+            background: $color-red-btn-active;
         }
     }
 }

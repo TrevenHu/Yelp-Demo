@@ -1,26 +1,43 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<%= render 'layouts/banner' %>
+<div class="form">
+  <div class="u-text-centered u-margin-bottom-small">
+    <h2 class="form__title">Log In to YelpDemo</h2>
+    <h4 class="form__subtitle">
+    New to YelpDemo? <%= link_to "Sign Up", new_user_registration_path %>
+    </h4>
+    <p class="form__text">
+      By logging in, you agree to YelpDemo’s Terms of Service and Privacy Policy.
+    </p>
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+  <div class="u-text-centered u-margin-bottom-small">
+    <a href="#" class="oath-login oath-login__fb"><i class="fab fa-facebook-f"></i>
+    Log In With Facebook</a>
+    <a href="#" class="oath-login oath-login__gg"><i class="fab fa-google"></i>Log In With Google</a>
   </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
+  <p class="seperate-line">OR</p>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form__field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class:"form__input" %>
+  </div>
+  <div class="form__field">
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" ,class:"form__input" %>
+  </div>
+  <div class="form__field u-margin-bottom-small">
+    <%= link_to "Forgot your password?", new_password_path(resource_name), class: "form__link"%>
+    <% if devise_mapping.rememberable? -%>
+      <div class="remember-me">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+  </div>
   <% end -%>
+  <%= f.submit "Log In" , class: "login-btn u-margin-bottom-smaller"%>
+  <% end %>
+  <p class="form__text form__text--grey">
+    New to YelpDemo? <%= link_to "Sign Up", new_registration_path(resource_name), class:"form__link" %><br />
+  </p>
+</div>
+<%= image_tag 'pic-1.png', size:"382x342", class: "right-side-img"%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+

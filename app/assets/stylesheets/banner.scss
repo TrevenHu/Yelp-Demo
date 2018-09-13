@@ -1,0 +1,15 @@
+@import "variables";
+
+.banner{
+	width: 100%;
+	height: 4.57rem;
+	background: $color-red-medium;
+	position: relative;
+
+	&__img{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
