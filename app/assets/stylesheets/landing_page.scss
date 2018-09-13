@@ -84,7 +84,7 @@ html {
 
     &__nav-btn{
         padding: 0 1.5rem;
-        color: inherit;
+        color: #fff;
         background: transparent;
         padding: .3rem 1.2rem;
         border: 2px solid #fff;
@@ -94,6 +94,7 @@ html {
         &:hover{
             background: #fff;
             color: #666;
+            text-decoration: none;
         }
 
         &:active{

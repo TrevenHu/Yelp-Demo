@@ -3,12 +3,17 @@
   <div class="navbar">
     <ul class="navbar__nav">
       <li class="navbar__nav-item navbar__left-side">
-        <a class="navbar__nav-link" href="/pages/about">About</a>
-        <a class="navbar__nav-link" href="/pages/contact">Contact</a>
+        <%= link_to "About", pages_about_path, class: "navbar__nav-link" %>
+        <%= link_to "Contact", pages_contact_path, class: "navbar__nav-link" %>
       </li>
       <li class="navbar__nav-item navbar__right-side">
-        <a class="navbar__nav-link" href="#">Log In</a>
-        <button class="navbar__nav-btn">Sign Up</button>
+        <% if user_signed_in? %>
+          <%= link_to "Edit Profile", edit_user_registration_path, class: "navbar__nav-link" %>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "navbar__nav-btn"%>
+        <% else %>
+          <%= link_to "Log In", new_user_session_path, class: "navbar__nav-link" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "navbar__nav-btn"%>
+        <% end %>
       </li>
     </ul>
   </div>
@@ -42,7 +47,7 @@
         <td><%= restaurant.name %></td>
         <td><%= restaurant.address %></td>
         <td><%= restaurant.phone %></td>
-        <td><%= restaurant.website %></td>
+        <td><%= link_to restaurant.website, restaurant.website %></td>
         <td><%= link_to 'Show', restaurant, class: "btn btn-link" %></td>
         <td><%= link_to 'Edit', edit_restaurant_path(restaurant), class: "btn btn-link" %></td>
         <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-link" %></td>
