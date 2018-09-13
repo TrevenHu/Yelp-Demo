@@ -66,6 +66,7 @@ gem 'carrierwave', '>= 1.2.1'
 gem "fog"
 gem 'unf'
 gem "mini_magick"
+gem 'devise'
 
 
 
