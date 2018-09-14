@@ -1,0 +1,32 @@
+@import "variables";
+
+.header {
+    /*    Relative to 95% of the height of the viewport**/
+    height: 80vh;
+    /*    CSS gradients let you display smooth transitions between two or more specified colors.*/
+    background-image: url('bg.jpg');
+    /*    cover: whatever the width of the viewport, or the element, it wil always try to fit the element inside of the box.*/
+    background-size: cover;
+    /*    whatever the viewport size is, this top of the image here always stays at the top of the container.*/
+    background-position: bottom;
+    position: relative;
+
+    &__logo-box {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+

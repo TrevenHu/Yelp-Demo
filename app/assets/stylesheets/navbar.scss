@@ -1,0 +1,76 @@
+@import "variables";
+
+.navbar {
+    top:2rem;
+    margin: 0 auto;
+    width: 75vw;
+    font-weight: 700;
+    color: $color-white;
+
+    &__nav-item{
+        display: inline-block;
+    }
+
+    &__nav-link{
+        text-decoration: none;
+        position: relative;
+        color: inherit;
+        padding: 0 1.5rem;
+        &:hover{
+            text-decoration: none;
+            color: $color-white;
+
+            &::after {
+              content:""; 
+              display: block;
+              width: 80%;
+              padding-top: .1rem;
+              left: 10%;
+              position: absolute;
+              border-bottom: 2px solid $color-white; 
+            }
+        }
+    }
+
+    &__right-side{
+        position: absolute;
+        top: 0;
+        right: 1.5rem;
+    }
+
+    &__btn{
+        padding: .3rem 1.2rem;
+    }
+}
+
+.navbar-small{
+    &__search{
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 60%;
+        width: 70%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__btn{
+        width: 6rem;
+        height: 2.5rem;
+        padding: .3rem .6rem;
+    }
+
+    &__btn-group{
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+
+
+
+
+

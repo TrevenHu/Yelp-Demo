@@ -9,10 +9,10 @@
       <li class="navbar__nav-item navbar__right-side">
         <% if user_signed_in? %>
           <%= link_to "Edit Profile", edit_user_registration_path, class: "navbar__nav-link" %>
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "navbar__nav-btn"%>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "navbar__btn btn-link btn-link--white-border"%>
         <% else %>
           <%= link_to "Log In", new_user_session_path, class: "navbar__nav-link" %>
-          <%= link_to "Sign Up", new_user_registration_path, class: "navbar__nav-btn"%>
+          <%= link_to "Sign Up", new_user_registration_path, class: "navbar__btn btn__link btn__link--white-border"%>
         <% end %>
       </li>
     </ul>
@@ -22,7 +22,7 @@
   </div>
   <form class="search">
     <input class="search__input" type="search" placeholder="Search" aria-label="Search">
-    <button class="search__btn" type="submit">Search</button>
+    <button class="search__btn btn__btn btn__btn--red" type="submit">Search</button>
   </form>
 </header>
 

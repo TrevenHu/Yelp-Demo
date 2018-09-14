@@ -1,0 +1,100 @@
+@import "variables";
+
+.btn__btn{
+	display: inline-block;
+	font-weight: 700;
+	box-shadow: 0 .2rem 1.5rem rgba(0, 0, 0, .15);
+	text-align: center;
+
+	&:hover{
+		outline: none;
+		border: none;
+	}
+	&:focus{
+		outline: none;
+		border: none;
+	}
+
+	&--red{
+		background-color: $color-red-medium;
+		color: $color-white;
+		&:hover{
+			background-color: $color-red-light;
+		}
+		&:focus{
+			background-color: $color-red-dark;
+		}
+	}
+
+	&--darkred{
+		background-color: $color-red-dark;
+		color: $color-white;
+		&:hover{
+			background-color: $color-red-light;
+		}
+		&:focus{
+			background-color: $color-red-medium;
+		}		
+	}
+}
+
+
+// btn-link is reserved by bootstrap
+.btn__link{
+	display: inline-block;
+ 	border-radius: 3px;
+ 	text-decoration: none;
+ 	text-align: center;
+ 	font-weight: 700;
+
+ 	&:hover{
+        text-decoration: none;
+    }
+
+ 	&--white-border{
+ 		color: $color-white;
+    	background: transparent;
+    	border: 2px solid $color-white;
+
+    	&:hover{
+            color: $color-grey-dark;
+            background-color: $color-white;
+        }
+        &:active{
+	        background: $color-white;
+	        color: #999;
+	    }
+ 	}
+
+ 	&--red{
+ 		color: $color-white;
+    	background: $color-red-light;
+    	border: 1px solid $color-red-dark;
+    	&:hover{
+			background-color: $color-red-dark;
+			color: $color-white;
+		}
+		&:focus{
+			background-color: $color-red-medium;
+			color: $color-white;
+		}
+ 	}
+
+ 	&--white{
+ 		color: #000;
+    	background: $color-white;
+    	border: none;
+    	&:hover{
+		    color: #000;
+		}
+		&:focus{
+			background-color: $color-grey-lighter;
+		    color: #000;
+		}
+ 	}
+}
+
+
+
+
+

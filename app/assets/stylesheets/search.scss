@@ -1,0 +1,39 @@
+@import "variables";
+
+.search{
+    position: absolute;
+    left: 50%;
+    top:45%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+
+    &__input{
+        display: inline-block;
+        width: 84%;
+        height: 2.8rem;
+        border-radius: 4px 0 0 4px;
+        box-shadow: 0 1rem 4rem rgba(0, 0, 0, .15);
+        border: none;
+
+        &:focus{
+            outline: none;
+            border: none;
+        }
+
+        &--small{
+            display: inline-block;
+            width: 30%;
+        }
+    }
+
+    &__btn{
+        outline: none;
+        border: none;
+        height: 2.8rem;
+        width: 15%;
+
+        &--small{
+            width: 10%;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+<div class="banner">
+	<%= image_tag 'logo.png', class: 'banner__img--left', size: "80x40"%>
+
+    <form class="navbar-small__search">
+	    <input class="search__input search__input--small" type="search" placeholder="Search" aria-label="Search">
+	    <button class="search__btn search__btn--small btn__btn btn__btn--darkred" type="submit">Search</button>
+  	</form>
+
+  
+  	<div class="navbar-small__btn-group">
+  		<% if user_signed_in? %>
+          <%= link_to "Edit Profile", edit_user_registration_path, class: "navbar-small__btn btn__link btn__link--red" %>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "navbar-small__btn btn__link btn--white"%>
+        <% else %>
+          <%= link_to "Log In", new_user_session_path, class: "navbar-small__btn btn__link btn__link--red" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "navbar-small__btn btn__link btn__link--white"%>
+        <% end %>
+  	</div>
+
+</div>
