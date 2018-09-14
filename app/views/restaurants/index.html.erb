@@ -9,7 +9,7 @@
       <li class="navbar__nav-item navbar__right-side">
         <% if user_signed_in? %>
           <%= link_to "Edit Profile", edit_user_registration_path, class: "navbar__nav-link" %>
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "navbar__btn btn-link btn-link--white-border"%>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "navbar__btn btn__link btn__link--white-border"%>
         <% else %>
           <%= link_to "Log In", new_user_session_path, class: "navbar__nav-link" %>
           <%= link_to "Sign Up", new_user_registration_path, class: "navbar__btn btn__link btn__link--white-border"%>
