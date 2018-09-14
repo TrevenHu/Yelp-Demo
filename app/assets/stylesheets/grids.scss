@@ -1,0 +1,9 @@
+.large-gutters {
+    margin-right: -4rem;
+    margin-left: -4rem;
+    > [class*="col-"] {
+      margin-right: 4rem;
+      margin-left: 4rem;
+    }
+  }
+

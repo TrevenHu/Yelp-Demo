@@ -1,31 +1,43 @@
 <%= render "layouts/navbar-small" %>
-<%= image_tag @restaurant.image_url %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
+<div class="mycontainer">
+  <div class="large-gutters row">
+    <div class="col-md-3">
+      <h2 class="big-title"><%= @restaurant.name %></h2>
+      <%= image_tag @restaurant.image_url %>
+      <div class="summary u-margin-bottom-small">
+        <ul class="iconed-list">
+          <li class="iconed-list__item">
+            <div class="iconed-list__avatar"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="iconed-list__info"><%= @restaurant.address %></div>
+          </li>
+          <li class="iconed-list__item">
+            <div class="iconed-list__avatar"><i class="fas fa-phone"></i></div>
+            <div class="iconed-list__info"> <%= @restaurant.phone %></div>
+          </li>
+          <li class="iconed-list__item">
+            <div class="iconed-list__avatar"><i class="fas fa-globe-americas"></i></div>
+            <div class="iconed-list__info last"><%= link_to @restaurant.website, @restaurant.website %></div>
+          </li>
+        </ul>
+      </div>
+  
+      <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "edit-btn btn__link btn__link--red" %> 
+      <%= link_to 'Back', restaurants_path, class: "back-btn btn__link btn__link--white" %>
 
-<p>
-  <strong>Address:</strong>
-  <%= @restaurant.address %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @restaurant.phone %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @restaurant.website %>
-</p>
-
-<% @reviews.each do |review|%>
-	<p><%= review.rating %></p>
-	<p><%= review.comment %></p>
-<% end %>
-
-<%= link_to 'Write a Review', new_restaurant_review_path(@restaurant) %>
-<%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-link" %> |
-<%= link_to 'Back', restaurants_path, class: "btn btn-link" %>
+    </div>
+        <div class="col-md-4">
+          <div class="review-btn btn__link btn__link--red u-margin-bottom-small">
+            <i class="fas fa-star"></i><%= link_to 'Write a Review', new_restaurant_review_path(@restaurant), class:"style-link"%>
+          </div>
+          <% if @reviews.blank? %>
+            <h3 class="midium-title">No reviews yet, be the first to write one!</h3>
+          <% else %>
+            <% @reviews.each do |review|%>
+              <p><%= review.rating %></p>
+              <p><%= review.comment %></p>
+            <% end %>
+          <% end %>
+        </div>
+  </div>
+</div>
