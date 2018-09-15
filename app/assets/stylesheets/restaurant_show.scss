@@ -6,6 +6,7 @@
 	background: $color-white;
 	border: 1px solid #e6e6e6;
     border-radius: 4px;
+    max-width: 80%;
 }
 
 .iconed-list{
@@ -23,6 +24,7 @@
 
 	&__info{
 		width: 90%;
+		word-break: break-word;
 
 		 &::after {
 			content: "";
@@ -67,6 +69,9 @@
 	border: 1px solid $color-grey-light;
 }
 
+.reviews-num{
+	display: inline-block;
+}
 
 
 

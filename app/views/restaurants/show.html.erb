@@ -2,8 +2,10 @@
 
 <div class="mycontainer">
   <div class="large-gutters row">
-    <div class="col-md-3">
+    <div class="col-md-4">
       <h2 class="big-title"><%= @restaurant.name %></h2>
+      <div class="star-rating star-rating--inline" data-rateyo-rating= <%= @avg_rating %> ></div>
+      <p class="reviews-num"><%= "#{@reviews.length} reviews" %></p>
       <%= image_tag @restaurant.image_url %>
       <div class="summary u-margin-bottom-small">
         <ul class="iconed-list">
@@ -26,17 +28,25 @@
       <%= link_to 'Back', restaurants_path, class: "back-btn btn__link btn__link--white" %>
 
     </div>
-        <div class="col-md-4">
+        <div class="col-md-4 u-margin-top-small">
           <div class="review-btn btn__link btn__link--red u-margin-bottom-small">
             <i class="fas fa-star"></i><%= link_to 'Write a Review', new_restaurant_review_path(@restaurant), class:"style-link"%>
           </div>
           <% if @reviews.blank? %>
             <h3 class="midium-title">No reviews yet, be the first to write one!</h3>
           <% else %>
-            <% @reviews.each do |review|%>
-              <div class="star-rating" data-rateyo-rating= <%= review.rating %> ></div>
-              <p><%= review.comment %></p>
-            <% end %>
+            <table class="table">
+              <tbody>
+                <% @reviews.each do |review|%>
+                  <tr>
+                    <td>
+                       <div class="star-rating" data-rateyo-rating= <%= review.rating %> ></div>
+                       <p><%= review.comment %></p>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
           <% end %>
         </div>
   </div>
