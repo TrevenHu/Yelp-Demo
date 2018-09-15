@@ -28,7 +28,7 @@
       <%= link_to 'Back', restaurants_path, class: "back-btn btn__link btn__link--white" %>
 
     </div>
-        <div class="col-md-4 u-margin-top-small">
+        <div class="col-md-6 u-margin-top-small">
           <div class="review-btn btn__link btn__link--red u-margin-bottom-small">
             <i class="fas fa-star"></i><%= link_to 'Write a Review', new_restaurant_review_path(@restaurant), class:"style-link"%>
           </div>
@@ -41,7 +41,7 @@
                   <tr>
                     <td>
                        <div class="star-rating" data-rateyo-rating= <%= review.rating %> ></div>
-                       <p><%= review.comment %></p>
+                       <p><%= h(review.comment).gsub(/\n/,'<br/>').html_safe %></p>
                     </td>
                   </tr>
                 <% end %>

@@ -11,9 +11,11 @@
     </div>
   <% end %>
 
+  <div id="star-rating"></div>
+
   <div class="field">
-    <%= form.label :rating %>
-    <%= form.number_field :rating %>
+    <%= form.label :rating,style: "display: none;"%>
+    <%= form.number_field :rating, id:"score",style: "display: none;"%>
   </div>
 
   <div class="field">
@@ -25,3 +27,18 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+
+<script>
+  $(function () {
+    var score;
+    $("#star-rating").rateYo({
+      starWidth: "30px",
+      normalFill: "#f1f1f1",
+      fullStar: true,
+      onSet: function (rating, rateYoInstance) {
+        $("#score").val(rating);
+      }
+    });
+  });
+</script>
