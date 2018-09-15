@@ -34,10 +34,20 @@
             <h3 class="midium-title">No reviews yet, be the first to write one!</h3>
           <% else %>
             <% @reviews.each do |review|%>
-              <p><%= review.rating %></p>
+              <div class="star-rating" data-rateyo-rating= <%= review.rating %> ></div>
               <p><%= review.comment %></p>
             <% end %>
           <% end %>
         </div>
   </div>
 </div>
+
+<script>
+  $(function () {
+    $(".star-rating").rateYo({
+      starWidth: "30px",
+      normalFill: "#f1f1f1",
+      readOnly:true
+    });
+  });
+</script>
