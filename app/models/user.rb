@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
  # user can have many reviews, and if user is deleted, all reviews will be deleted
   has_many :reviews, dependent: :destroy
+
+  validates :first_name, :last_name, presence: true
 end
