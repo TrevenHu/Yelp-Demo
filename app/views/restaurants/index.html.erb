@@ -20,10 +20,10 @@
   <div class="header__logo-box">
     <%=image_tag("logo.png", size: "160x80")%>
   </div>
-  <form class="search">
-    <input class="search__input" type="search" placeholder="Search" aria-label="Search">
-    <button class="search__btn btn__btn btn__btn--red" type="submit">Search</button>
-  </form>
+  <%= form_tag search_restaurants_path, method: :get, class: "search" do %>
+    <%= text_field_tag :search, params[:search], class: "search__input"%>
+    <%= submit_tag "Search", name: nil, class:"search__btn btn__btn btn__btn--red" %>
+  <% end %>
 </header>
 
 <h1>Restaurants</h1>

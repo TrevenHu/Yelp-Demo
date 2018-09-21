@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   # nest the review inside the restaurant
   resources :restaurants do
+  	collection do
+  		get 'search'
+  	end
   	resources :reviews, except: [:show, :index]
   end
   get 'pages/about'

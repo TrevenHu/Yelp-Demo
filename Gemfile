@@ -68,6 +68,7 @@ gem 'unf'
 gem "mini_magick"
 gem 'devise'
 gem "figaro"
+gem 'searchkick'
 
 
 
