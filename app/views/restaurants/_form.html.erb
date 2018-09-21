@@ -1,4 +1,9 @@
-<%= form_with(model: restaurant, local: true, multipart: true) do |form| %>
+<%= render "layouts/navbar-small" %>
+<div class="form">
+  <div class="u-text-centered u-margin-bottom-small">
+    <h2 class="form__title">Editing Restaurant</h2>
+  </div>
+  <%= form_with(model: restaurant, local: true, multipart: true) do |form| %>
   <% if restaurant.errors.any? %>
      <div id="error_explanation" class="alert alert-danger alert-dismissible">
       <button class="close" type="button" data-dismiss="alert">
@@ -15,32 +20,38 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= form.label :name %>
-    <%= form.text_field :name, class:"form-control", placeholder: "Panda Express" %> 
+  <div class="form__field">
+    <%= form.label :name, class:"form__subtitle" %>
+    <%= form.text_field :name, class:"form__input", placeholder: "Panda Express" %> 
   </div>
 
-  <div class="form-group">
-    <%= form.label :address %>
-    <%= form.text_field :address, class:"form-control", placeholder: "2100 Gilman Drive, La Jolla, CA 92039" %>
+  <div class="form__field">
+    <%= form.label :address,class:"form__subtitle" %>
+    <%= form.text_field :address, class:"form__input", placeholder: "2100 Gilman Drive, La Jolla, CA 92039" %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :phone %>
-    <%= form.text_field :phone, class:"form-control", placeholder: "(123) 456-789" %>
+  <div class="form__field">
+    <%= form.label :phone,class:"form__subtitle" %>
+    <%= form.text_field :phone, class:"form__input", placeholder: "(123) 456-789" %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :website %>
-    <%= form.text_field :website, class:"form-control", placeholder: "http://www.pandaexpress.com/"%>
+  <div class="form__field">
+    <%= form.label :website,class:"form__subtitle" %>
+    <%= form.text_field :website, class:"form__input", placeholder: "http://www.pandaexpress.com/"%>
   </div>
 
-  <div class="form-group">
-    <%= form.label :image %>
-    <%= form.file_field :image, class:"form-control"%>
+  <div class="form__field">
+    <%= form.label :image,class:"form__subtitle" %>
+    <%= form.file_field :image, class:"form__input"%>
   </div>
 
   <div class="actions">
-    <%= form.submit class: "btn btn-primary"%>
+    <%= form.submit class: "login-btn btn__btn btn__btn--red u-margin-bottom-smaller"%>
+    <%= link_to 'Show', @restaurant, class: "cancel-btn btn__link btn__link--red"%>
+    <%= link_to 'Back', restaurants_path, class: "back-btn btn__link btn__link--white"%>
   </div>
 <% end %>
+</div>
+<%= image_tag 'pic-1.png', size:"382x342", class: "right-side-img"%>
+
+

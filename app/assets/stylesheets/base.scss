@@ -36,6 +36,13 @@ ul {
 }
 
 .footer-img{
-    margin: 0 10rem;
+   margin-left:50%;
+   transform: translateX(-50%);
 }
 
+.footer{
+    position: absolute;
+    bottom: 0;
+    left:50%;
+    transform:translateX(-50%);
+}

@@ -1,4 +1,6 @@
-<%= form_with(model: [@restaurant, @review], local: true) do |form| %>
+<%= render "layouts/navbar-small" %>
+<div class="form">
+  <%= form_with(model: [@restaurant, @review], local: true) do |form| %>
   <% if review.errors.any? %>
     <div id="error_explanation" class="alert alert-danger alert-dismissible">
       <button class="close" type="button" data-dismiss="alert">
@@ -15,22 +17,29 @@
     </div>
   <% end %>
 
+  <div class="u-margin-bottom-small">
+    <h2 class="form__title">New Review</h2>
+  </div>
+
   <div id="star-rating"></div>
 
-  <div class="field">
+  <div class="form__field">
     <%= form.label :rating,style: "display: none;"%>
     <%= form.number_field :rating, id:"score",style: "display: none;"%>
   </div>
 
-  <div class="field">
-    <%= form.label :comment %>
-    <%= form.text_area :comment %>
+  <div class="form__field">
+    <%= form.label :comment, class:"form__subtitle" %> <br />
+    <%= form.text_area :comment, placeholder:"How's your experience?", cols:80, rows:10%>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Create review", class: "cancel-btn btn__btn btn__btn--red u-margin-bottom-smaller"%>
+    <%= link_to 'Back', restaurant_path(@restaurant), class: "back-btn btn__link btn__link--white u-margin-bottom-smaller"%>
   </div>
 <% end %>
+</div>
+
 
 
 <script>
