@@ -31,4 +31,4 @@
 /config/master.key
 
 # Ignore API Keys information
-/condig/authentication_details.yml
+/config/authentication_details.yml
