@@ -26,7 +26,23 @@
   <% end %>
 </header>
 
-<h1>Restaurants</h1>
+<h3 class="form__title u-text-centered u-margin-top-small u-margin-bottom-small">Find Best Restaurants in Town</h3>
+
+<div class="cards-list">
+  <% @restaurants.each do |restaurant| %>
+    <div class="card">
+      <% if user_signed_in? && current_user.admin? %>
+          <%= link_to 'Edit', edit_restaurant_path(restaurant), class: "btn__link btn__link--red-border card__btn-1" %>
+          <%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn__link btn__link--red-border card__btn-2" %>
+        <% end %>
+      <%=image_tag randomized_background_image, class:"card__avatar" %>
+      <div class="card__name"><%= link_to restaurant.name, restaurant %></div>
+      <div class="card__info"><%= restaurant.phone %></div>
+      <div class="card__info"><%= link_to restaurant.website, restaurant.website %></div>
+      <div class="card__info"><%= restaurant.address %></div>
+    </div>
+  <% end %>
+</div>
 
 <table class="table table-hover">
   <thead>
@@ -61,4 +77,14 @@
 <% if user_signed_in? && current_user.admin? %>
   <%= link_to 'New Restaurant', new_restaurant_path, class: "btn btn-link" %>
 <% end %>
-<%=image_tag("footer.png", size: "960x140")%>
+<%=image_tag("footer.png", size: "960x140", class:"footer-img")%>
+
+<script>
+  $(function () {
+    $(".star-rating").rateYo({
+      starWidth: "15px",
+      normalFill: "#f1f1f1",
+      readOnly:true
+    });
+  });
+</script>

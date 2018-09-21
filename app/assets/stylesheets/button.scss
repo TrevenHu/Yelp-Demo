@@ -66,6 +66,23 @@
 	    }
  	}
 
+ 	&--red-border{
+ 		color: $color-red-dark;
+    	background: transparent;
+    	border: 2px solid $color-red-dark;
+
+    	&:hover{
+            color: $color-red-light;
+            background-color: transparent;
+            border: 2px solid $color-red-light;
+        }
+        &:active{
+        	border: 2px solid $color-red-dark;
+	        background: transparent;
+	        color: $color-red-dark;
+	    }
+ 	}
+
  	&--red{
  		color: $color-white;
     	background: $color-red-light;
