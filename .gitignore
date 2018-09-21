@@ -30,7 +30,4 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-# Ignore API Keys information
-/config/authentication_details.yml
-
 .env
