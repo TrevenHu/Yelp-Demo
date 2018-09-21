@@ -67,7 +67,7 @@ gem "fog"
 gem 'unf'
 gem "mini_magick"
 gem 'devise'
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails', groups: [:development, :test, :production]
 
 
 
