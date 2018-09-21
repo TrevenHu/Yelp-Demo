@@ -32,3 +32,5 @@
 
 # Ignore API Keys information
 /config/authentication_details.yml
+
+.env
